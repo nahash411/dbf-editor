@@ -1,0 +1,22 @@
+
+<table>
+  <thead>
+    <tr>
+      {{#each model.header.fields as |field|}}
+        <th>{{field.name}}</th>
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model.records as |record|}}
+      <tr>
+        {{#each-in record as |field value|}}
+          <td>{{value}}</td>
+        {{/each-in}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+{{outlet}}

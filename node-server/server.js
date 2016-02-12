@@ -10,12 +10,14 @@ app.use(function (req, res, next) {
 });
 
 app.get('/dbf/:name', function (req, res) {
-  dbfJSON = {header:[], records: []}
+  dbfJSON = {records: []}
   parser = new Parser(__dirname + '/dbf/' + req.params.name);
   parser.on('header', function (h) {
-    dbfJSON.header.push(h);
+    dbfJSON.header = h;
   })
   parser.on('record', function (r) {
+    delete r['@sequenceNumber'];
+    delete r['@deleted'];
     dbfJSON.records.push(r);
   })
   parser.on('end', function () {

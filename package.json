@@ -11,7 +11,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember test",
-    "server": "nodemon node-server/server.js"
+    "server": "nodemon --watch node-server --ignore node-server/dbf node-server/server.js"
   },
   "repository": "",
   "engines": {
