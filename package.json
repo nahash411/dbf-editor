@@ -10,7 +10,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "server": "nodemon node-server/server.js"
   },
   "repository": "",
   "engines": {
@@ -36,5 +37,9 @@
     "ember-data": "1.13.15",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4"
+  },
+  "dependencies": {
+    "dbf-parser": "0.0.1",
+    "express": "^4.13.4"
   }
 }
